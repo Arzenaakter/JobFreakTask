@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Left Panel Example</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      .logo{
+        width: 75%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 40px;
+        border-bottom: 3px dotted burlywood ;
+      }
+
+      #left-panel {
+        width: 200px;
+        background: #f1f1f1;
+        padding: 10px;
+      }
+      #left-panel ul {
+        list-style: none;
+        margin-left: 20px;
+        padding: 0;
+      }
+
+      #left-panel li {
+        margin-bottom: 10px;
+      }
+
+      #left-panel li a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #content {
+        flex-grow: 1;
+        padding: 10px;
+       
+      }
+
+      /* Hide all content initially */
+      .panel-content {
+        display: none;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .banner {
+  position: relative;
+  width: 100%;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.overlay h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.overlay a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+.form-container {
+    background-color: #f2f2f2;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+  }
+  .input-field{
+    margin-bottom: 10px;
+  }
+    </style>
+    <script>
+      function showContent(contentId) {
+        // Hide all content
+        var contents = document.getElementsByClassName("panel-content");
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].style.display = "none";
+        }
+
+        // Show selected content
+        var content = document.getElementById(contentId);
+        content.style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+
+    
+    <div id="left-panel">
+      <ul>
+        <li><a href="#" onclick="showContent('home-content')">Home</a></li>
+        
+        <li>
+          <a href="#" onclick="showContent('contact-content')">Contact</a>
+        </li>
+        <li>
+          <a href="#" onclick="showContent('info-content')">Information</a>
+        </li>
+        <li><a href="#" onclick="showContent('guide-content')">Guide</a></li>
+      </ul>
+    </div>
+    <div id="content">
+        <h1 class="logo">Job Freak </h1>
+      <div id="home-content" class="panel-content">
+       
+        <div class="banner">
+            <img src="https://img.freepik.com/free-photo/lone-tree_181624-46361.jpg?w=740&t=st=1687792822~exp=1687793422~hmac=7b32e793f585c6882c8f30530aa365ce994548210e8370370e59c66932b39f37" alt="Banner Image">
+            <div class="overlay">
+              <h1>Welcome to Our Website</h1>
+              <p>Explore and discover the best content!</p>
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+      </div>
+      
+      <div id="contact-content" class="panel-content">
+        <h2>Contact</h2>
+      
+          <div class="form-container">
+            <form >
+                <div class="input-field">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required >
+                </div>
+                <div class="input-field">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-field">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-field">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+          </div>
+         
+      </div>
+      <div id="info-content" class="panel-content">
+        <h2>About Job Freak</h2>
+        <p>At Job Freak, we post daily updates on internships and job postings! Our aim is to empower the youth of our country and make them self-dependent by providing them with jobs/internships and all kinds of opportunities from various sectors.</p>
+      </div>
+      <div id="guide-content" class="panel-content">
+        <h2>Guide</h2>
+        <p>This is the Guide content.</p>
+      </div>
+    </div>
+  </body>
+</html>
